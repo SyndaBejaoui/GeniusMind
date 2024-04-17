@@ -2,25 +2,22 @@ package com.pfeproject.GeniusMind.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.FieldDefaults;
-
 @Getter
 @Setter
-@ToString
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class UtilisateurEntity {
+@Table(name ="Cours")
+public class CoursEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int IdUtilisateur;
+    private Long id;
 
+    private String fileName;
 
-    @OneToOne
-    public CompteEntity compte;
-
-
-
-
+    @Lob
+    @Column(columnDefinition = "MEDIUMBLOB")
+    private byte[] fileContent;
 }
