@@ -8,6 +8,7 @@ public class GeniusMindApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GeniusMindApplication.class, args);
+		System.out.println("App Started...");
 	}
 
 }
